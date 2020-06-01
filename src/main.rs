@@ -11,6 +11,8 @@ use winit_input_helper::WinitInputHelper;
 
 const FIRE_WIDTH: usize = 320;
 const FIRE_HEIGHT: usize = 168;
+const TARGET_FPS: u64 = 60;
+const TIME_PER_FRAME: u64 = 1000 / TARGET_FPS; // in milliseconds
 
 fn from_u8_rgb(r: u8, g: u8, b: u8) -> u32 {
     let (r, g, b) = (r as u32, g as u32, b as u32);
@@ -136,8 +138,8 @@ fn main() {
 
             let end_time = Instant::now();
             let render_time = end_time - start_time;
-            if render_time < Duration::from_millis(16) {
-                let waste_time = Duration::from_millis(16) - render_time;
+            if render_time < Duration::from_millis(TIME_PER_FRAME) {
+                let waste_time = Duration::from_millis(TIME_PER_FRAME) - render_time;
                 thread::sleep(waste_time);
             }
         }
