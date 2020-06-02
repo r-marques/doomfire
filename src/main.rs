@@ -8,7 +8,7 @@ use winit::event_loop::{ControlFlow, EventLoop};
 use winit::window::WindowBuilder;
 use winit_input_helper::WinitInputHelper;
 
-use doom_fire_rs::{DoomFire, FIRE_HEIGHT, FIRE_WIDTH, TIME_PER_FRAME};
+use doomfire::{DoomFire, FIRE_HEIGHT, FIRE_WIDTH, TIME_PER_FRAME};
 
 fn from_u8_rgb(r: u8, g: u8, b: u8) -> u32 {
     let (r, g, b) = (r as u32, g as u32, b as u32);

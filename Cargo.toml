@@ -1,5 +1,5 @@
 [package]
-name = "doom-fire-rs"
+name = "doomfire"
 version = "0.1.0"
 authors = ["Rodolphe Marques <marques.rodolphe@gmail.com>"]
 edition = "2018"
