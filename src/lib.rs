@@ -5,6 +5,7 @@ pub const FIRE_HEIGHT: usize = 168;
 pub const TARGET_FPS: u64 = 60;
 pub const TIME_PER_FRAME: u64 = 1000 / TARGET_FPS; // in milliseconds
 
+/// RGBA color pallet
 const PALLET: [[u8; 4]; 37] = [
     [0x07, 0x07, 0x07, 0xFF],
     [0x1F, 0x07, 0x07, 0xFF],
@@ -83,7 +84,8 @@ impl DoomFire {
     }
 
     /// Draw the next frame to a generic byte slice.
-    /// frame will usually be some reference to a pixel buffer provided by some rendering library
+    /// frame will usually be some reference to a pixel buffer provided by some rendering library.
+    /// This function will fill the frame with RGBA pixels
     pub fn draw(&self, frame: &mut [u8]) {
         for (i, pixel) in frame.chunks_exact_mut(4).enumerate() {
             pixel.copy_from_slice(&PALLET[self.fire_pixels[i]])
