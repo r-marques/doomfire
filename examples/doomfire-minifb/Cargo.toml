@@ -1,5 +1,5 @@
 [package]
-name = "doomfire-pixels"
+name = "doomfire-minifb"
 version = "0.1.0"
 authors = ["Rodolphe Marques <marques.rodolphe@gmail.com>"]
 edition = "2018"
