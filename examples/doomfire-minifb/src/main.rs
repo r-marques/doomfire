@@ -21,12 +21,15 @@ fn main() {
     window.limit_update_rate(Some(Duration::from_millis(TIME_PER_FRAME)));
 
     let mut doom_fire = DoomFire::new();
+
     let mut frame: Vec<u8> = vec![0; FIRE_WIDTH * FIRE_HEIGHT * 4];
     let mut buffer: Vec<u32> = vec![0; FIRE_WIDTH * FIRE_HEIGHT];
 
     while window.is_open() && !window.is_key_down(Key::Escape) {
         doom_fire.draw(&mut frame);
 
+        // DoomFire expects a &[u8] to write the pixels with a RGBA encoding but minifb
+        // expects a &[u32] with a 0RGB pixel encoding, where the upper 8 bits are ignored.
         for (i, pixel) in frame.chunks_exact(4).enumerate() {
             buffer[i] = from_u8_rgb(pixel[0], pixel[1], pixel[2]);
         }
