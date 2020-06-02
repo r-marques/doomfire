@@ -1,0 +1,11 @@
+[package]
+name = "doomfire-pixels"
+version = "0.1.0"
+authors = ["Rodolphe Marques <marques.rodolphe@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sdl2 = "0.34.0"
+doomfire = { path = "../.." }
