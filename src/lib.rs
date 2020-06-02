@@ -90,3 +90,9 @@ impl DoomFire {
         }
     }
 }
+
+impl Default for DoomFire {
+    fn default() -> Self {
+        DoomFire::new()
+    }
+}
