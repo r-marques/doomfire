@@ -17,10 +17,11 @@ name = "doomfire"
 version = "0.1.0"
 dependencies = [
  "rand",
+ "rand_chacha",
 ]
 
 [[package]]
-name = "doomfire-pixels"
+name = "doomfire-sdl2"
 version = "0.1.0"
 dependencies = [
  "doomfire",

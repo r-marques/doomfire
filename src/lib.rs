@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::{Rng, SeedableRng};
 
 pub const FIRE_WIDTH: usize = 320;
 pub const FIRE_HEIGHT: usize = 168;
@@ -65,7 +65,7 @@ impl DoomFire {
     /// Update the internal state of each pixel for the Doom Fire effect.
     /// This is main code for the Doom Fire effect.
     pub fn update(&mut self) {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand_chacha::ChaCha8Rng::seed_from_u64(666);
 
         for x in 0..FIRE_WIDTH {
             for y in 1..FIRE_HEIGHT {
