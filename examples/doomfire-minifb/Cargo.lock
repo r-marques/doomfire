@@ -62,10 +62,11 @@ name = "doomfire"
 version = "0.1.0"
 dependencies = [
  "rand 0.7.3",
+ "rand_chacha 0.2.2",
 ]
 
 [[package]]
-name = "doomfire-pixels"
+name = "doomfire-minifb"
 version = "0.1.0"
 dependencies = [
  "doomfire",
