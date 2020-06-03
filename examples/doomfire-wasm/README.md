@@ -1,69 +1,42 @@
-<div align="center">
+# DOOM Fire wasm
 
-  <h1><code>wasm-pack-template</code></h1>
+This example uses webassembly to run the DOOM Fire example in the browser.  The
+example is mostly based on the [rustwasm Conway's Game of Life
+tutorial](https://rustwasm.github.io/docs/book/game-of-life/introduction.html).
 
-  <strong>A template for kick starting a Rust and WebAssembly project using <a href="https://github.com/rustwasm/wasm-pack">wasm-pack</a>.</strong>
+Most of the files are just boilerplate. The important files are:
+- [`src/lib.rs`](https://github.com/r-marques/doomfire/blob/master/examples/doomfire-wasm/src/lib.rs) the rust code. A small wrapper around the `doomfire` library
+- [`www/index.js`](https://github.com/r-marques/doomfire/blob/master/examples/doomfire-wasm/www/index.js) the javascript code that uses the canvas api to render the DOOM Fire
+- [`www/index.html`](https://github.com/r-marques/doomfire/blob/master/examples/doomfire-wasm/www/index.html) the html page
 
-  <p>
-    <a href="https://travis-ci.org/rustwasm/wasm-pack-template"><img src="https://img.shields.io/travis/rustwasm/wasm-pack-template.svg?style=flat-square" alt="Build Status" /></a>
-  </p>
+### How to build and run
 
-  <h3>
-    <a href="https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/index.html">Tutorial</a>
-    <span> | </span>
-    <a href="https://discordapp.com/channels/442252698964721669/443151097398296587">Chat</a>
-  </h3>
+1. Make sure you have
+   [`wasm-pack`](https://rustwasm.github.io/wasm-pack/installer/) and
+   [`npm`](https://www.npmjs.com/get-npm) installed
 
-  <sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
-</div>
+2. Install the `wasm32-unknown-unknown` target
 
-## About
-
-[**📚 Read this template tutorial! 📚**][template-docs]
-
-This template is designed for compiling Rust libraries into WebAssembly and
-publishing the resulting package to NPM.
-
-Be sure to check out [other `wasm-pack` tutorials online][tutorials] for other
-templates and usages of `wasm-pack`.
-
-[tutorials]: https://rustwasm.github.io/docs/wasm-pack/tutorials/index.html
-[template-docs]: https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/index.html
-
-## 🚴 Usage
-
-### 🐑 Use `cargo generate` to Clone this Template
-
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
-
+```bash
+$ rustup target add wasm32-unknown-unknown
 ```
-cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
-cd my-project
+3. Compile rust to webassembly
+
+```bash
+$ cd examples/doomfire-wasm
+$ wasm-pack build
+```
+4. Install `npm` dependencies
+
+```bash
+$ cd www
+$ npm install
 ```
 
-### 🛠️ Build with `wasm-pack build`
+5. Run the development server
 
-```
-wasm-pack build
-```
-
-### 🔬 Test in Headless Browsers with `wasm-pack test`
-
-```
-wasm-pack test --headless --firefox
+```bash
+$ npm run start
 ```
 
-### 🎁 Publish to NPM with `wasm-pack publish`
-
-```
-wasm-pack publish
-```
-
-## 🔋 Batteries Included
-
-* [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) for communicating
-  between WebAssembly and JavaScript.
-* [`console_error_panic_hook`](https://github.com/rustwasm/console_error_panic_hook)
-  for logging panic messages to the developer console.
-* [`wee_alloc`](https://github.com/rustwasm/wee_alloc), an allocator optimized
-  for small code size.
+6. Access [http://localhost:8080/](http://localhost:8080/) in your browser

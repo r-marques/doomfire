@@ -19,6 +19,10 @@ fire:
   uses [pixels](https://github.com/parasyte/pixels)
 - [doomfire-sdl2](https://github.com/r-marques/doomfire/tree/master/examples/doomfire-sdl2)
   uses the rust [sdl2 bindings](https://github.com/Rust-SDL2/rust-sdl2)
+- [doomfire-wasm](https://github.com/r-marques/doomfire/tree/master/examples/doomfire-wasm)
+  please see the
+  [README.md](https://github.com/r-marques/doomfire/blob/master/examples/doomfire-wasm/README.md)
+  inside the example folder for instructions on how to build and run.
 
 ### How to run
 

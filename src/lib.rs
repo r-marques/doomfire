@@ -65,6 +65,9 @@ impl DoomFire {
     /// Update the internal state of each pixel for the Doom Fire effect.
     /// This is main code for the Doom Fire effect.
     pub fn update(&mut self) {
+        // No particular reason to use ChaCha8Rng. Was just part of
+        // an example on the [rust rand
+        // cookbook](https://rust-random.github.io/book/guide-start.html#fixed-seed-rngs)
         let mut rng = rand_chacha::ChaCha8Rng::seed_from_u64(666);
 
         for x in 0..FIRE_WIDTH {
