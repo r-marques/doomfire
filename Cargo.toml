@@ -3,6 +3,13 @@ name = "doomfire"
 version = "0.1.0"
 authors = ["Rodolphe Marques <marques.rodolphe@gmail.com>"]
 edition = "2018"
+license = "MIT"
+description = "Doom Fire rust implementation based on Fabien Sanglard's blog post"
+homepage = "https://github.com/r-marques/doomfire"
+repository = "https://github.com/r-marques/doomfire"
+readme = "README.md"
+keywords = ["game-development", "doom", "minifb", "pixels", "sdl2"]
+categories = ["game-development", "games", "graphics", "multimedia", "rendering"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
