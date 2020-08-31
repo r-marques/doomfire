@@ -8,7 +8,7 @@ description = "Doom Fire rust implementation based on Fabien Sanglard's blog pos
 homepage = "https://github.com/r-marques/doomfire"
 repository = "https://github.com/r-marques/doomfire"
 readme = "README.md"
-keywords = ["game-development", "doom", "minifb", "pixels", "sdl2", "graphics-library", "doomfire", "wasm", "webassembly"]
+keywords = ["game-development", "doom", "minifb", "pixels", "sdl2"]
 categories = ["game-development", "games", "graphics", "multimedia", "rendering"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
